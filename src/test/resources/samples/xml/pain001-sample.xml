@@ -1,0 +1,46 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pain.001.001.09">
+    <CstmrCdtTrfInitn>
+        <GrpHdr>
+            <MsgId>MSG-0001</MsgId>
+            <CreDtTm>2026-09-07T10:15:00</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>PMTINF-0001</PmtInfId>
+            <PmtMtd>TRF</PmtMtd>
+            <ReqdExctnDt>2026-09-08</ReqdExctnDt>
+            <Dbtr>
+                <Nm>Acme Corp</Nm>
+                <PstlAdr>
+                    <StrtNm>Market Street</StrtNm>
+                    <BldgNb>1</BldgNb>
+                    <PstCd>94105</PstCd>
+                    <TwnNm>San Francisco</TwnNm>
+                    <Ctry>US</Ctry>
+                </PstlAdr>
+            </Dbtr>
+            <DbtrAcct><IBAN>GB29NWBK60161331926819</IBAN></DbtrAcct>
+            <DbtrAgt><BICFI>NWBKGB2L</BICFI></DbtrAgt>
+            <ChrgBr>SHAR</ChrgBr>
+            <CdtTrfTxInf>
+                <PmtId>
+                    <EndToEndId>E2E-0001</EndToEndId>
+                </PmtId>
+                <Amt><InstdAmt Ccy="EUR">1000.00</InstdAmt></Amt>
+                <CdtrAgt><BICFI>DEUTDEFF</BICFI></CdtrAgt>
+                <Cdtr>
+                    <Nm>Beta GmbH</Nm>
+                    <PstlAdr>
+                        <StrtNm>Hauptstrasse</StrtNm>
+                        <BldgNb>10</BldgNb>
+                        <PstCd>60311</PstCd>
+                        <TwnNm>Frankfurt</TwnNm>
+                        <Ctry>DE</Ctry>
+                    </PstlAdr>
+                </Cdtr>
+                <CdtrAcct><IBAN>DE89370400440532013000</IBAN></CdtrAcct>
+                <RmtInf><Ustrd>Invoice 12345</Ustrd></RmtInf>
+            </CdtTrfTxInf>
+        </PmtInf>
+    </CstmrCdtTrfInitn>
+</Document>

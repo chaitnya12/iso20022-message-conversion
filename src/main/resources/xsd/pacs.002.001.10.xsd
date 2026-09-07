@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Representative, scoped-down model of ISO 20022 pacs.002.001.10
+  (FIToFIPaymentStatusReportV10). See pain.001.001.09.xsd for the scoping
+  note that applies to every schema in this project.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+           xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10"
+           targetNamespace="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+           jaxb:version="3.0">
+
+    <xs:annotation>
+        <xs:appinfo>
+            <jaxb:schemaBindings>
+                <jaxb:package name="com.bank.iso20022converter.model.pacs00200110"/>
+            </jaxb:schemaBindings>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <xs:element name="Document" type="Document"/>
+
+    <xs:complexType name="Document">
+        <xs:sequence>
+            <xs:element name="FIToFIPmtStsRpt" type="FIToFIPaymentStatusReportV10"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FIToFIPaymentStatusReportV10">
+        <xs:sequence>
+            <xs:element name="GrpHdr" type="GroupHeader"/>
+            <xs:element name="TxInfAndSts" type="PaymentTransactionInformationAndStatus" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GroupHeader">
+        <xs:sequence>
+            <xs:element name="MsgId" type="xs:string"/>
+            <xs:element name="CreDtTm" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PaymentTransactionInformationAndStatus">
+        <xs:sequence>
+            <xs:element name="OrgnlInstrId" type="xs:string" minOccurs="0"/>
+            <xs:element name="OrgnlEndToEndId" type="xs:string"/>
+            <xs:element name="OrgnlTxId" type="xs:string" minOccurs="0"/>
+            <xs:element name="OrgnlUETR" type="xs:string"/>
+            <!-- TxSts values per base ISO 20022: ACSC, ACCC, RJCT, PDNG, ACSP, ... -->
+            <xs:element name="TxSts" type="xs:string"/>
+            <xs:element name="StsRsnInf" type="StatusReasonInformation" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StatusReasonInformation">
+        <xs:sequence>
+            <xs:element name="Rsn" type="xs:string" minOccurs="0"/>
+            <xs:element name="AddtlInf" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

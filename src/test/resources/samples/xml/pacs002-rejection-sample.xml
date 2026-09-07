@@ -1,0 +1,18 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.002.001.10">
+    <FIToFIPmtStsRpt>
+        <GrpHdr>
+            <MsgId>STS-0001</MsgId>
+            <CreDtTm>2026-09-07T11:00:00</CreDtTm>
+        </GrpHdr>
+        <TxInfAndSts>
+            <OrgnlInstrId>PMTINF-0001</OrgnlInstrId>
+            <OrgnlEndToEndId>E2E-0001</OrgnlEndToEndId>
+            <OrgnlUETR>3c249e5a-1a1a-4c1a-9d3a-000000000001</OrgnlUETR>
+            <TxSts>RJCT</TxSts>
+            <StsRsnInf>
+                <Rsn>AC04</Rsn>
+                <AddtlInf>Account closed</AddtlInf>
+            </StsRsnInf>
+        </TxInfAndSts>
+    </FIToFIPmtStsRpt>
+</Document>
